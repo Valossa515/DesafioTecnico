@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DesafioTecnico.Core.Comissão
+﻿namespace DesafioTecnico.Core.Comissão
 {
     public record ComissaoVendedor(
         string Vendedor, 
