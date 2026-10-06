@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Itens de Solução/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="DesafioTecnico.App/DesafioTecnico.App.csproj" />
+  <Project Path="DesafioTecnico.Core/DesafioTecnico.Core.csproj" />
+  <Project Path="DesafioTecnico.Tests/DesafioTecnico.Tests.csproj" />
+</Solution>

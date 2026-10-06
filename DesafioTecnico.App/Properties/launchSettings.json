@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DesafioTecnico.App": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
