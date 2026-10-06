@@ -4,11 +4,11 @@ Solução em C# para três desafios: cálculo de comissão de vendedores, movime
 
 ## Como rodar
 
-**Pré-requisito:** SDK do .NET 8 ou superior.
+**Pré-requisito:** SDK do .NET 10 ou superior.
 
 ```bash
 # Executar a aplicação (menu interativo no console)
-dotnet run --project src/DesafioTecnico.App
+dotnet run --project DesafioTecnico.App
 
 # Executar os testes
 dotnet test
@@ -29,16 +29,14 @@ Ao iniciar, o programa exibe o menu:
 ## Estrutura
 
 ```
-DesafioTecnico.sln
-├── src/
-│   ├── DesafioTecnico.Core/       Regras de negócio (sem dependência de console ou arquivo)
-│   │   ├── Comissao/
-│   │   ├── Estoque/
-│   │   └── Juros/
-│   └── DesafioTecnico.App/        Aplicação de console: menu, entrada de dados e exibição
-│       └── Dados/                 vendas.json e estoque.json do enunciado
-└── tests/
-    └── DesafioTecnico.Tests/      Testes unitários (xUnit) das regras do Core
+DesafioTecnico.slnx
+├── DesafioTecnico.App/            Aplicação de console: menu, entrada de dados e exibição
+│   └── Dados/                     vendas.json e estoque.json do enunciado
+├── DesafioTecnico.Core/           Regras de negócio (sem dependência de console ou arquivo)
+│   ├── Comissão/
+│   ├── Estoque/
+│   └── Juros/
+└── DesafioTecnico.Tests/          Testes unitários (xUnit) das regras do Core
 ```
 
 As regras ficam no `Core` e não sabem de onde vêm os dados nem como são exibidos. Os leitores de JSON recebem o conteúdo como texto, não o caminho do arquivo, para serem testáveis sem acesso a disco. Com essa separação, a mesma lógica pode ser exposta por uma API, por exemplo, apenas adicionando um novo projeto de apresentação.
@@ -102,7 +100,7 @@ A data de hoje é obtida por um `TimeProvider` injetado na calculadora. A aplica
 
 ## Testes
 
-27 testes unitários cobrindo:
+28 testes unitários cobrindo:
 - **Comissão:** os limites de cada faixa (99,99 / 100,00 / 499,99 / 500,00), o agrupamento por vendedor e a leitura do JSON.
 - **Estoque:** entrada, saída, saída que zera o estoque, saída maior que o disponível, quantidade inválida, descrição vazia, produto inexistente, geração de IDs sequenciais e a leitura do JSON.
 - **Juros:** título antes do vencimento, vencendo hoje, com atraso, arredondamento e valor inválido.
